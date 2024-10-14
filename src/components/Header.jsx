@@ -2,7 +2,7 @@ import { IconChevronDown } from "@tabler/icons-react";
 
 const Header = () => {
   return (
-    <header>
+    <header className="sticky top-0">
       <p className="bg-black w-full pt-5 text-center text-4xl text-white">
         TABELA PERIÓDICA
       </p>
