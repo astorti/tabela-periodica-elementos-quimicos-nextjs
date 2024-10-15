@@ -1,5 +1,6 @@
 import Card from "@/components/Card";
 import Header from "@/components/Header";
+import Menu from "@/components/Menu";
 const listaElementos = require("./../data/elementosQuimicos");
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <div>
       <Header />
+      <Menu showPeriodicTable={false}/>
       {tabelaElementosQuimicos.map((elQuimico) => {
         return (
           <div key={+elQuimico.numeroAtomico}>
