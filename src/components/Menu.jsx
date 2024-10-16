@@ -85,6 +85,20 @@ const Menu = () => {
     });
   }
   elementsFamilies()
+
+  const scrollToElement = (element) => {
+    const id = document.querySelector(`#${element}`)
+    const height = id.offsetTop - 200
+    scrollPage(height)
+  }
+
+  const scrollPage = (height) => {
+    handlePeriodicTable()
+    window.scroll({
+      top: height,
+      
+    })
+  }
   
   return (
     <div className="flex items-between justify-center">
@@ -101,36 +115,42 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia1.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
-                />
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
+                  />
+                </div>
               )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia2.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
                   />
+                </div>
               )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia3.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
-                />
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
+                  />
+                </div>
               )
             })}
             <CardMenu nome="Lantanídeos" numeroAtomico="57 - 71" grupo="lantanídeos" />
@@ -139,180 +159,210 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia4.map((elQuimico) => {
               return (
-                <CardMenu
-                numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
                   />
+                </div>
                 )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia5.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
-                />
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
+                  />
+                </div>
               )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia6.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
-                />
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
+                  />
+                </div>
               )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia7.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
-                />
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
+                  />
+                </div>
               )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia8.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
-                />
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
+                  />
+                </div>
               )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia9.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
                   />
+                </div>
                 )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia10.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
                   />
+                </div>
                 )
               })}
           </div>
           <div className="flex flex-col justify-end">
             {familia11.map((elQuimico) => {
               return (
-                <CardMenu
-                numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
                   />
+                </div>
               )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia12.map((elQuimico) => {
               return (
-                <CardMenu
-                numeroAtomico={elQuimico.numeroAtomico}
-                simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
-                />
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
+                  />
+                </div>
               )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia13.map((elQuimico) => {
               return (
-                <CardMenu
-                numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
                   />
+                </div>
                 )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia14.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
                   />
+                </div>
               )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia15.map((elQuimico) => {
               return (
-                <CardMenu
-                numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
-                />
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
+                  />
+                </div>
               )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia16.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
-                />
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
+                  />
+                </div>
               )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia17.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
                   />
+                </div>
               )
             })}
           </div>
           <div className="flex flex-col justify-end">
             {familia18.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
-                />
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
+                  />
+                </div>
               )
             })}
           </div>
@@ -321,24 +371,28 @@ const Menu = () => {
           <div className="flex justify-end mt-5">
             {lantanideos.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
-                />
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
+                  />
+                </div>
               )
             })}
           </div>
           <div className="flex justify-end">
             {actinideos.map((elQuimico) => {
               return (
-                <CardMenu
-                  numeroAtomico={elQuimico.numeroAtomico}
-                  simbolo={elQuimico.simbolo}
-                  nome={elQuimico.nome}
-                  grupo={elQuimico.grupo}
-                />
+                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                  <CardMenu
+                    numeroAtomico={elQuimico.numeroAtomico}
+                    simbolo={elQuimico.simbolo}
+                    nome={elQuimico.nome}
+                    grupo={elQuimico.grupo}                    
+                  />
+                </div>
               )
             })}
           </div>

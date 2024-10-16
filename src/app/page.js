@@ -12,7 +12,7 @@ export default function Home() {
       <Menu showPeriodicTable={false}/>
       {tabelaElementosQuimicos.map((elQuimico) => {
         return (
-          <div key={+elQuimico.numeroAtomico}>
+          <div id={elQuimico.nome} key={+elQuimico.numeroAtomico}>
             <Card
               simbolo={elQuimico.simbolo}
               nome={elQuimico.nome}
