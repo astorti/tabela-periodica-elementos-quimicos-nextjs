@@ -1,14 +1,18 @@
 'use client'
-import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
-import { useState } from "react";
+import { IconChevronDown, IconChevronUp, IconFilter } from "@tabler/icons-react";
+import { useContext } from "react";
 const listaElementos = require("../data/elementosQuimicos");
 import CardMenu from "./CardMenu";
+import { MenuContext } from "@/context/menuContext";
 
 const Menu = () => {
+
+  const  {handleFilter, showPeriodicTable, handlePeriodicTable} = useContext(MenuContext)
   
   const tabelaElementosQuimicos = listaElementos.elementosQuimicos;
-  const [showPeriodicTable, setShowPeriodicTable] = useState(false)
+  
   let tableStyle = "hidden"
+  let filterButtons = "hidden"
   let familia1 = []
   let familia2 = []
   let familia3 = []
@@ -31,13 +35,14 @@ const Menu = () => {
   let actinideos = []
 
   {showPeriodicTable ?
-    tableStyle = "fixed top-24 border border-t-0 bg-stone-900/90 flex flex-col m-auto mt-1 block" :
+    tableStyle = "fixed z-1 top-24 border border-t-0 bg-stone-900/90 flex flex-col m-auto mt-1 block" :
     tableStyle = "hidden"
   }  
 
-  const handlePeriodicTable = () => {
-    setShowPeriodicTable(!showPeriodicTable)
-  }
+  {showPeriodicTable ?
+    filterButtons = "fixed z-10 top-28 left-32 ml-28 flex flex-col gap-3 mt-5 -ml-48" :
+    filterButtons = "hidden"
+  }  
 
   const elementsFamilies = () => {  
     tabelaElementosQuimicos.forEach(elemento => {
@@ -96,7 +101,7 @@ const Menu = () => {
     handlePeriodicTable()
     window.scroll({
       top: height,
-      
+      behavior: "smooth"
     })
   }
   
@@ -104,10 +109,31 @@ const Menu = () => {
     <div className="flex items-between justify-center">
       <button
         onClick={() => handlePeriodicTable()}
-        className="fixed z-10 -mt-6 h-6 w-32 border border-b-0 border-white/60 rounded"
+        className="fixed z-1 -mt-6 h-6 w-32 border border-b-0 border-white/60 rounded"
       >
         {showPeriodicTable ? <IconChevronUp className="m-auto" /> : <IconChevronDown className="m-auto" />}
       </button>
+
+      <div className={filterButtons}>
+        <div className="flex gap-1">
+          <input type="radio" name="grupo" value="metais alcalinos" onClick={() => handleFilter('metais alcalinos')}/><p className="text-yellow-600 mr-2">metal alcalino</p>
+          <input type="radio" name="grupo" value="metais alcalino-terrosos" onClick={() => handleFilter('metais alcalino-terrosos')}/><p className="text-orange-600 mr-2">metal alcalino-terroso</p>
+          <input type="radio" name="grupo" value="metais de transição" onClick={() => handleFilter('metais de transição')}/><p className="text-sky-300 mr-2">metal de transição</p>
+          <input type="radio" name="grupo" value="metais pós-transição" onClick={() => handleFilter('metais pós-transição')}/><p className="text-red-600 mr-2">metal pós-transição</p>
+        </div>
+        <div className="flex gap-1">
+          <input type="radio" name="grupo" value="semimetais" onClick={() => handleFilter('semimetais')}/><p className="text-blue-400 mr-2">semimetal</p>
+          <input type="radio" name="grupo" value="ametais" onClick={() => handleFilter('ametais')}/><p className="text-emerald-600 mr-2">ametal</p>
+          <input type="radio" name="grupo" value="halogênios" onClick={() => handleFilter('halogênios')}/><p className="text-fuchsia-400 mr-2">halogênio</p>
+          <input type="radio" name="grupo" value="gases nobres" onClick={() => handleFilter('gases nobres')}/><p className="text-purple-400 mr-2">gás nobre</p>
+          <input type="radio" name="grupo" value="lantanídeos" onClick={() => handleFilter('lantanídeos')}/><p className="text-amber-500 mr-2">lantanídeos</p>
+          <input type="radio" name="grupo" value="actinídeos" onClick={() => handleFilter('actinídeos')}/><p className="text-teal-400/80 mr-2">actinídeos</p>
+        </div>
+        <div className="flex gap-1">
+          <input type="radio" name="grupo" value="outros" onClick={() => handleFilter('')}/><p className="text-zinc-400">outros</p>
+          <input type="radio" name="grupo" value="todos" onClick={() => handleFilter('todos')}/><p className="text-lime-400">todos</p>
+        </div>
+      </div>
 
       <div className={tableStyle}>
 

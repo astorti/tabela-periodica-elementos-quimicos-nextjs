@@ -19,8 +19,8 @@ const Card = ({
       symbol = "text-7xl text-center text-lime-200"
       line1 = "text-xl font-bold mt-10 border-b border-b-lime-300"
       line2 = "mt-4 mb-2 border-b border-b-lime-300"
-    } else if (grupo === "metais de transição") {
-        mainCard = "flex justify-around w-4/5 border rounded border-teal-600 bg-teal-600/40 m-auto mt-28 mb-40"
+    } else if (grupo === "actinídeos") {
+        mainCard = "flex justify-around w-4/5 border rounded border-teal-600 bg-teal-400/80 m-auto mt-28 mb-40"
         symbolCard = "flex flex-col w-32 h-40 border justify-around rounded border-teal-400 p-2 mb-5"
         symbol = "text-7xl text-center text-teal-200"
         line1 = "text-xl font-bold mt-10 border-b border-b-teal-300"
@@ -68,12 +68,12 @@ const Card = ({
         line1 = "text-xl font-bold mt-10 border-b border-b-emerald-300"
         line2 = "mt-4 mb-2 border-b border-b-emerald-300"
     } else if (grupo === "lantanídeos") {
-        mainCard = "flex justify-around w-4/5 border rounded border-slate-600 bg-slate-600/80 m-auto mt-28 mb-40"
-        symbolCard = "flex flex-col w-32 h-40 border justify-around rounded border-slate-400 p-2 mb-5"
-        symbol = "text-7xl text-center text-slate-200"
-        line1 = "text-xl font-bold mt-10 border-b border-b-slate-300"
-        line2 = "mt-4 mb-2 border-b border-b-slate-300"
-    } else if (grupo === "actinídeos") {
+        mainCard = "flex justify-around w-4/5 border rounded border-amber-300 bg-amber-500 m-auto mt-28 mb-40"
+        symbolCard = "flex flex-col w-32 h-40 border justify-around rounded border-amber-400 p-2 mb-5"
+        symbol = "text-7xl text-center text-amber-200"
+        line1 = "text-xl font-bold mt-10 border-b border-b-amber-300"
+        line2 = "mt-4 mb-2 border-b border-b-amber-300"
+    } else if (grupo === "metais de transição") {
         mainCard = "flex justify-around w-4/5 border rounded border-sky-300 bg-sky-400/80 m-auto mt-28 mb-40"
         symbolCard = "flex flex-col w-32 h-40 border justify-around rounded border-sky-400 p-2 mb-5"
         symbol = "text-7xl text-center text-sky-200"

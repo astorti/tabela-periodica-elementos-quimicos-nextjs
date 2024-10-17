@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Overpass } from "next/font/google";
+import { MenuConstextProvider } from "@/context/menuContext";
 
 export const metadata = {
   title: "Tabela Periódica",
@@ -13,7 +14,9 @@ const font = Overpass({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <MenuConstextProvider>
+        <body className={font.className}>{children}</body>
+      </MenuConstextProvider>
     </html>
   );
 }

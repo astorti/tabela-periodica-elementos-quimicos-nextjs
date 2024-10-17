@@ -1,16 +1,20 @@
+'use client'
 import Card from "@/components/Card";
 import Header from "@/components/Header";
 import Menu from "@/components/Menu";
-const listaElementos = require("./../data/elementosQuimicos");
+
+import { MenuContext } from "@/context/menuContext";
+import { useContext, useEffect } from "react";
 
 export default function Home() {
-  const tabelaElementosQuimicos = listaElementos.elementosQuimicos;
+  
+  const { groupFilter } = useContext(MenuContext)
 
   return (
-    <div>
+    <div id="mainPage">
       <Header />
       <Menu showPeriodicTable={false}/>
-      {tabelaElementosQuimicos.map((elQuimico) => {
+      {groupFilter.map((elQuimico) => {
         return (
           <div id={elQuimico.nome} key={+elQuimico.numeroAtomico}>
             <Card
