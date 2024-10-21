@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Menu from "@/components/Menu";
 
 import { MenuContext } from "@/context/menuContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 export default function Home() {
   

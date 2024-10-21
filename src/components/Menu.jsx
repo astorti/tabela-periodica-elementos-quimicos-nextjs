@@ -1,5 +1,4 @@
 'use client'
-import { IconChevronDown, IconChevronUp, IconFilter } from "@tabler/icons-react";
 import { useContext } from "react";
 const listaElementos = require("../data/elementosQuimicos");
 import CardMenu from "./CardMenu";
@@ -35,12 +34,12 @@ const Menu = () => {
   let actinideos = []
 
   {showPeriodicTable ?
-    tableStyle = "fixed z-1 top-24 border border-t-0 bg-stone-900/90 flex flex-col m-auto mt-1 block" :
+    tableStyle = "border-2 border-zinc-400 border-t-0 flex flex-col m-auto mt-1 block" :
     tableStyle = "hidden"
   }  
 
   {showPeriodicTable ?
-    filterButtons = "fixed z-10 top-28 left-32 ml-28 flex flex-col gap-3 mt-5 -ml-48" :
+    filterButtons = "flex justify-center text-sm bg-neutral-400/40 -mb-1 h-8" :
     filterButtons = "hidden"
   }  
 
@@ -93,11 +92,7 @@ const Menu = () => {
 
   const scrollToElement = (element) => {
     const id = document.querySelector(`#${element}`)
-    const height = id.offsetTop - 200
-    scrollPage(height)
-  }
-
-  const scrollPage = (height) => {
+    const height = id.offsetTop - 720
     handlePeriodicTable()
     window.scroll({
       top: height,
@@ -106,32 +101,26 @@ const Menu = () => {
   }
   
   return (
-    <div className="flex items-between justify-center">
-      <button
-        onClick={() => handlePeriodicTable()}
-        className="fixed z-1 -mt-6 h-6 w-32 border border-b-0 border-white/60 rounded"
-      >
-        {showPeriodicTable ? <IconChevronUp className="m-auto" /> : <IconChevronDown className="m-auto" />}
-      </button>
-
+    <div className="flex flex-col items-between justify-center">
+      
       <div className={filterButtons}>
         <div className="flex gap-1">
-          <input type="radio" name="grupo" value="metais alcalinos" onClick={() => handleFilter('metais alcalinos')}/><p className="text-yellow-600 mr-2">metal alcalino</p>
-          <input type="radio" name="grupo" value="metais alcalino-terrosos" onClick={() => handleFilter('metais alcalino-terrosos')}/><p className="text-orange-600 mr-2">metal alcalino-terroso</p>
-          <input type="radio" name="grupo" value="metais de transição" onClick={() => handleFilter('metais de transição')}/><p className="text-sky-300 mr-2">metal de transição</p>
-          <input type="radio" name="grupo" value="metais pós-transição" onClick={() => handleFilter('metais pós-transição')}/><p className="text-red-600 mr-2">metal pós-transição</p>
+          <input type="radio" name="grupo" value="metais alcalinos" onClick={() => handleFilter('metais alcalinos')}/><p className="font-overpass flex items-center text-yellow-600 mr-2">metal alcalino</p>
+          <input type="radio" name="grupo" value="metais alcalino-terrosos" onClick={() => handleFilter('metais alcalino-terrosos')}/><p className="font-overpass flex items-center text-orange-600 mr-2">metal alcalino-terroso</p>
+          <input type="radio" name="grupo" value="metais de transição" onClick={() => handleFilter('metais de transição')}/><p className="font-overpass flex items-center text-sky-500 mr-2">metal de transição</p>
+          <input type="radio" name="grupo" value="metais pós-transição" onClick={() => handleFilter('metais pós-transição')}/><p className="font-overpass flex items-center text-red-600 mr-2">metal pós-transição</p>
         </div>
         <div className="flex gap-1">
-          <input type="radio" name="grupo" value="semimetais" onClick={() => handleFilter('semimetais')}/><p className="text-blue-400 mr-2">semimetal</p>
-          <input type="radio" name="grupo" value="ametais" onClick={() => handleFilter('ametais')}/><p className="text-emerald-600 mr-2">ametal</p>
-          <input type="radio" name="grupo" value="halogênios" onClick={() => handleFilter('halogênios')}/><p className="text-fuchsia-400 mr-2">halogênio</p>
-          <input type="radio" name="grupo" value="gases nobres" onClick={() => handleFilter('gases nobres')}/><p className="text-purple-400 mr-2">gás nobre</p>
-          <input type="radio" name="grupo" value="lantanídeos" onClick={() => handleFilter('lantanídeos')}/><p className="text-amber-500 mr-2">lantanídeos</p>
-          <input type="radio" name="grupo" value="actinídeos" onClick={() => handleFilter('actinídeos')}/><p className="text-teal-400/80 mr-2">actinídeos</p>
+          <input type="radio" name="grupo" value="semimetais" onClick={() => handleFilter('semimetais')}/><p className="font-overpass flex items-center text-blue-500 mr-2">semimetal</p>
+          <input type="radio" name="grupo" value="ametais" onClick={() => handleFilter('ametais')}/><p className="font-overpass flex items-center text-emerald-600 mr-2">ametal</p>
+          <input type="radio" name="grupo" value="halogênios" onClick={() => handleFilter('halogênios')}/><p className="font-overpass flex items-center text-fuchsia-500 mr-2">halogênio</p>
+          <input type="radio" name="grupo" value="gases nobres" onClick={() => handleFilter('gases nobres')}/><p className="font-overpass flex items-center text-purple-500 mr-2">gás nobre</p>
+          <input type="radio" name="grupo" value="lantanídeos" onClick={() => handleFilter('lantanídeos')}/><p className="font-overpass flex items-center text-amber-600 mr-2">lantanídeos</p>
+          <input type="radio" name="grupo" value="actinídeos" onClick={() => handleFilter('actinídeos')}/><p className="font-overpass flex items-center text-teal-500 mr-2">actinídeos</p>
         </div>
         <div className="flex gap-1">
-          <input type="radio" name="grupo" value="outros" onClick={() => handleFilter('')}/><p className="text-zinc-400">outros</p>
-          <input type="radio" name="grupo" value="todos" onClick={() => handleFilter('todos')}/><p className="text-lime-400">todos</p>
+          <input type="radio" name="grupo" value="outros" onClick={() => handleFilter('')}/><p className="font-overpass flex items-center text-zinc-400">outros</p>
+          <input type="radio" name="grupo" value="todos" onClick={() => handleFilter('todos')}/><p className="font-overpass flex items-center text-lime-600">todos</p>
         </div>
       </div>
 
@@ -141,7 +130,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia1.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -155,7 +144,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia2.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -169,7 +158,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia3.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -179,13 +168,21 @@ const Menu = () => {
                 </div>
               )
             })}
-            <CardMenu nome="Lantanídeos" numeroAtomico="57 - 71" grupo="lantanídeos" />
-            <CardMenu nome="Actinídeos" numeroAtomico="89 - 103" grupo="actinídeos"/>
+
+            <div className=" pt-1 gap-6 flex flex-col justify-around items-center min-h-[53.5px] min-w-[72px] border border-amber-400 bg-amber-500">
+              <p className="font-overpass text-xs text-left ml-1 -mb-2 font-extralight">57 - 71</p>
+              <p className="font-overpass text-xs">Lantanídeos</p>
+            </div>
+            <div className="pt-1 gap-6 flex flex-col justify-around items-center min-h-[53.5px] min-w-[72px] border border-teal-300 bg-teal-400/80">
+              <p className="font-overpass text-xs text-left ml-1 -mb-2 font-extralight">89 - 103</p>
+              <p className="font-overpass text-xs">Actinídeos</p>
+            </div>
+            
           </div>
           <div className="flex flex-col justify-end">
             {familia4.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -199,7 +196,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia5.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -213,7 +210,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia6.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -227,7 +224,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia7.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -241,7 +238,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia8.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -255,7 +252,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia9.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -269,7 +266,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia10.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -283,7 +280,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia11.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -297,7 +294,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia12.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -311,7 +308,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia13.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -325,7 +322,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia14.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -339,7 +336,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia15.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -353,7 +350,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia16.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -367,7 +364,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia17.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -381,7 +378,7 @@ const Menu = () => {
           <div className="flex flex-col justify-end">
             {familia18.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -397,7 +394,7 @@ const Menu = () => {
           <div className="flex justify-end mt-5">
             {lantanideos.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
@@ -411,7 +408,7 @@ const Menu = () => {
           <div className="flex justify-end">
             {actinideos.map((elQuimico) => {
               return (
-                <div onClick={() => scrollToElement(elQuimico.nome)}>
+                <div key={elQuimico.numeroAtomico} onClick={() => scrollToElement(elQuimico.nome)}>
                   <CardMenu
                     numeroAtomico={elQuimico.numeroAtomico}
                     simbolo={elQuimico.simbolo}
