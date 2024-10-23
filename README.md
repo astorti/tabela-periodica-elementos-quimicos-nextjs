@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PROJETO TABELA PERIÓDICA DOS ELEMENTOS QUÍMICOS
 
-## Getting Started
+Projeto pessoal de uma tabela periódica. O projeto se baseia em um listagem de cards de cada elemento químico da tabela periódica. 
 
-First, run the development server:
+Os cards são diferenciados por cor de acordo com o grupo ao qual cada elemento químico pertence. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+No header da página há um botão no qual é possível abrir uma tabela periódica interativa, a qual serve como menu para acessar o card de um elemento químico específico ou filtrar os cards pelos grupos dos elementos químicos.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Para rodar o programa
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### No terminal digitar o comando
+``npm run dev``
 
-## Learn More
+## Tecnologias utilizada no desenvolvimento do projeto
 
-To learn more about Next.js, take a look at the following resources:
+![Next](https://img.shields.io/badge/next_js-D9D9D9.svg?style=plastic&logo=nextdotjs&logoColor=000000)
+![Javascript](https://img.shields.io/badge/javascript-D9D9D9.svg?style=plastic&logo=javascript&logoColor=F7DF1E)
+![tailwind](https://img.shields.io/badge/tailwind_css-D9D9D9.svg?style=plastic&logo=tailwindcss&logoColor=06B6D4)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Telas do projeto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![Tela Inicial](src/assets/tela-inicial.png)<br/>
+Figura 1: Tela inicial
 
-## Deploy on Vercel
+![Card do grupo dos metais de transição](src/assets/card-grupo-metais-transicao.png)<br/>
+Figura 2: Card do grupo dos metais de transição
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Menu tabela periódica](src/assets/menu-tabela-periodica.png)<br/>
+Figura 3: Menu tabela periódica
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Tabela periódica com filtro dos metais de transição aplicado](src/assets/menu-filtro-metais-transicao.png)<br/>
+Figura 4: Tabela periódica com filtro dos metais de transição aplicado
+
+![Card responsivo para tela mobile](src/assets/card-tela-mobile.png)<br/>
+Figura 5: Card responsivo para tela mobile
+
+![Menu tabela periódica responsivo para tela mobile](src/assets/menu-tela-mobile.png)<br/>
+Figura 6: Menu tabela periódica responsivo para tela mobile
+
+>*Projeto desenvolvido em outubro/2024*
