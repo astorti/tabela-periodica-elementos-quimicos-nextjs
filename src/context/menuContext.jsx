@@ -20,7 +20,7 @@ export const MenuConstextProvider = ({ children }) => {
   const [lantanideos, setLantanideos] = useState("lantanideos")
   const [actinideos, setActinideos] = useState("actinideos")
   const [outros, setOutros] = useState("outros")
-  let notSelected = "pt-1 flex flex-col justify-around min-w-[72px] border"
+  let notSelected = "pt-1 flex flex-col justify-around min-w-[65px] max-md:min-w-[20px] border"
 
   const handlePeriodicTable = () => {
     scrollToElement()

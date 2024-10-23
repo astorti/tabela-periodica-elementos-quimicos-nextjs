@@ -39,7 +39,7 @@ const Menu = () => {
   }  
 
   {showPeriodicTable ?
-    filterButtons = "flex justify-center text-sm bg-neutral-400/40 -mb-1 h-8" :
+    filterButtons = "flex justify-center text-sm bg-neutral-400/40 -mb-1 h-8 max-md:bg-white max-md:mt-5 max-md:ml-10 max-md:mb-36" :
     filterButtons = "hidden"
   }  
 
@@ -92,7 +92,7 @@ const Menu = () => {
 
   const scrollToElement = (element) => {
     const id = document.querySelector(`#${element}`)
-    const height = id.offsetTop - 720
+    const height = id.offsetTop - 700
     handlePeriodicTable()
     window.scroll({
       top: height,
@@ -104,21 +104,21 @@ const Menu = () => {
     <div className="flex flex-col items-between justify-center">
       
       <div className={filterButtons}>
-        <div className="flex gap-1">
+        <div className="flex gap-1 max-md:flex-col max-md:items-center">
           <input type="radio" name="grupo" value="metais alcalinos" onClick={() => handleFilter('metais alcalinos')}/><p className="font-overpass flex items-center text-yellow-600 mr-2">metal alcalino</p>
           <input type="radio" name="grupo" value="metais alcalino-terrosos" onClick={() => handleFilter('metais alcalino-terrosos')}/><p className="font-overpass flex items-center text-orange-600 mr-2">metal alcalino-terroso</p>
           <input type="radio" name="grupo" value="metais de transição" onClick={() => handleFilter('metais de transição')}/><p className="font-overpass flex items-center text-sky-500 mr-2">metal de transição</p>
           <input type="radio" name="grupo" value="metais pós-transição" onClick={() => handleFilter('metais pós-transição')}/><p className="font-overpass flex items-center text-red-600 mr-2">metal pós-transição</p>
         </div>
-        <div className="flex gap-1">
+        <div className="flex gap-1 max-md:flex-col max-md:items-center">
           <input type="radio" name="grupo" value="semimetais" onClick={() => handleFilter('semimetais')}/><p className="font-overpass flex items-center text-blue-500 mr-2">semimetal</p>
           <input type="radio" name="grupo" value="ametais" onClick={() => handleFilter('ametais')}/><p className="font-overpass flex items-center text-emerald-600 mr-2">ametal</p>
           <input type="radio" name="grupo" value="halogênios" onClick={() => handleFilter('halogênios')}/><p className="font-overpass flex items-center text-fuchsia-500 mr-2">halogênio</p>
           <input type="radio" name="grupo" value="gases nobres" onClick={() => handleFilter('gases nobres')}/><p className="font-overpass flex items-center text-purple-500 mr-2">gás nobre</p>
+          </div>
+        <div className="flex gap-1 max-md:flex-col max-md:items-center">
           <input type="radio" name="grupo" value="lantanídeos" onClick={() => handleFilter('lantanídeos')}/><p className="font-overpass flex items-center text-amber-600 mr-2">lantanídeos</p>
           <input type="radio" name="grupo" value="actinídeos" onClick={() => handleFilter('actinídeos')}/><p className="font-overpass flex items-center text-teal-500 mr-2">actinídeos</p>
-        </div>
-        <div className="flex gap-1">
           <input type="radio" name="grupo" value="outros" onClick={() => handleFilter('')}/><p className="font-overpass flex items-center text-zinc-400">outros</p>
           <input type="radio" name="grupo" value="todos" onClick={() => handleFilter('todos')}/><p className="font-overpass flex items-center text-lime-600">todos</p>
         </div>
@@ -169,13 +169,13 @@ const Menu = () => {
               )
             })}
 
-            <div className=" pt-1 gap-6 flex flex-col justify-around items-center min-h-[53.5px] min-w-[72px] border border-amber-400 bg-amber-500">
-              <p className="font-overpass text-xs text-left ml-1 -mb-2 font-extralight">57 - 71</p>
-              <p className="font-overpass text-xs">Lantanídeos</p>
+            <div className=" pt-1 gap-6 flex flex-col justify-around items-center min-h-[51px] max-md:min-h-[21.2px] min-w-[65px] max-md:min-w-[20px] border border-amber-400 bg-amber-500">
+              <p className="font-overpass text-xs text-left ml-1 -mb-2 font-extralight max-md:hidden">57 - 71</p>
+              <p className="font-overpass text-[10px] max-md:hidden">Lantanídeos</p>
             </div>
-            <div className="pt-1 gap-6 flex flex-col justify-around items-center min-h-[53.5px] min-w-[72px] border border-teal-300 bg-teal-400/80">
-              <p className="font-overpass text-xs text-left ml-1 -mb-2 font-extralight">89 - 103</p>
-              <p className="font-overpass text-xs">Actinídeos</p>
+            <div className="pt-1 gap-6 flex flex-col justify-around items-center min-h-[51px] max-md:min-h-[21.2px] min-w-[65px] max-md:min-w-[20px] border border-teal-300 bg-teal-400/80">
+              <p className="font-overpass text-xs text-left ml-1 -mb-2 font-extralight max-md:hidden">89 - 103</p>
+              <p className="font-overpass text-[10px] max-md:hidden">Actinídeos</p>
             </div>
             
           </div>

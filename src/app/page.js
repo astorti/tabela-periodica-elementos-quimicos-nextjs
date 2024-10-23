@@ -2,17 +2,25 @@
 import Card from "@/components/Card";
 import Header from "@/components/Header";
 import Menu from "@/components/Menu";
+import { IconChevronUp, IconChevronDown } from "@tabler/icons-react";
 
 import { MenuContext } from "@/context/menuContext";
 import { useContext } from "react";
 
 export default function Home() {
   
-  const { groupFilter } = useContext(MenuContext)
+  const { groupFilter, showPeriodicTable, handlePeriodicTable } = useContext(MenuContext)
 
   return (
     <div id="mainPage">
       <Header />
+
+      <div className="sticky top-16 flex justify-center items-center h-12 bg-sky-500">
+        <button onClick={() => handlePeriodicTable()} className="bg-sky-900/50 rounded-full p-1 m-2">
+          {showPeriodicTable ? <IconChevronUp className="m-auto" /> : <IconChevronDown className="m-auto" />}
+        </button>
+      </div>
+
       <Menu showPeriodicTable={false}/>
       {groupFilter.map((elQuimico) => {
         return (
